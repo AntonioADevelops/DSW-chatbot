@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Favorite Color</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
-
-    <form action='/response'>
-      <label for="color">What is your favorite color?</label>
-      <br>
-      <input type="text" name="color" id="color">
-      <br><br>
-      
-      <label for="num">What number do you want to multiply by 2?</label>
-      <br>
-      <input type="number" name="multNum" id="num" required>
-      <br><br>
-      <input type="submit">
-    </form>
-
+    <div class="center">
+      <form>
+        <fieldset>
+          <legend>Chat Bot</legend>
+          <input type="text" name="response" id="response" size="100"><br>
+          <label for="response">What is your favorite color?</label>
+        </fieldset>
+      </form>
+    </div>
   </body>
 </html>

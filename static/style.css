@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+}
+
+.center {
+    position: fixed;
+    top: 40%;
+    left: 30%;
+}
