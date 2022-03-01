@@ -10,12 +10,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
-    <div class="center">
-      <form>
+    <div class="textbox">
+      <div class="innerbox">
+        <p>{{textoutput}}</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+      <form action = /form>
         <fieldset>
           <legend>Chat Bot</legend>
-          <input type="text" name="response" id="response" size="100"><br>
-          <label for="response">What is your favorite color?</label>
+          <input type="text" name="response" id="response" size="80%"><br>
+          <label for="response">Ask the bot any Question.</label>
         </fieldset>
       </form>
     </div>
