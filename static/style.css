@@ -13,8 +13,31 @@ body {
     border-radius: 25px;
     padding: 20px;
 }
+
 .innerbox {
     border: 4px solid rgb(112, 112, 112);
     border-radius: 25px;
-    padding: 20px;
+    min-height: 400px;
+    max-height: 400px;
+}
+
+.container {
+    text-align: left;
+    border: 2px solid #dedede !important;
+    background-color: #f1f1f1 !important;
+    border-radius: 5px !important;
+    padding: 10px !important;
+    margin: 10px 0 !important;
+}
+  
+.darker {
+    text-align: right !important;
+    border-color: #ccc !important;
+    background-color: #ddd !important;
+}
+  
+.container::after {
+    content: "" !important;
+    clear: both !important;
+    display: table !important;
 }
