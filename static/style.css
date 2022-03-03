@@ -19,24 +19,34 @@ body {
     border-radius: 25px;
     min-height: 400px;
     max-height: 400px;
+    overflow: auto;
 }
 
-.container {
+.bot {
     text-align: left;
-    border: 2px solid #dedede !important;
+    border: 2px solid #d4d4d4 !important;
     background-color: #f1f1f1 !important;
-    border-radius: 5px !important;
+    border-radius:10px !important;
+    padding: 10px !important;
+    margin: 20px 0 !important;
+}
+  
+.user {
+    text-align: right !important;
+    border: 2px solid rgb(170, 170, 170) !important;
+    background-color: #ddd !important;
+    border-radius: 10px !important;
     padding: 10px !important;
     margin: 10px 0 !important;
 }
   
-.darker {
-    text-align: right !important;
-    border-color: #ccc !important;
-    background-color: #ddd !important;
+.user::after {
+    content: "" !important;
+    clear: both !important;
+    display: table !important;
 }
-  
-.container::after {
+
+.bot::after {
     content: "" !important;
     clear: both !important;
     display: table !important;

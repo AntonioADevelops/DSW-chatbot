@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
-    <div class="">
+    <div class="textbox">
       <div class="innerbox">
-        <div class = "text">
+        <div class = "text" id="data">
           {{response}}
         </div>
       </div>
-      <form action = /form>
+      <form id="forminput" action = "/form">
         <fieldset>
           <legend>Chat Bot</legend>
           <input type="text" name="response" id="response" size="80%"><br>
@@ -24,5 +24,12 @@
         </fieldset>
       </form>
     </div>
+    <script>
+      $(document).ready(function(){
+        $("#forminput").onsubmit(function(){
+          $("#data").load("/update");
+        });
+      });
+    </script>
   </body>
 </html>

@@ -14,10 +14,16 @@ def render_main():
 def user_input():
     u_input = request.args['response']
     if u_input in greetings:
-        reply = Markup('<p class="container darker">') + u_input + Markup('</p><p class="container"> Hello, I\'m a Chat Bot. Ask me a question and I\'ll try my best to answer!</p>')
+        reply = Markup('<p class="user">') + u_input + Markup('</p><p class="bot"> Hello, I\'m a Chat Bot. Ask me a question and I\'ll try my best to answer!</p>')
         return render_template('home.html', response = reply)
     else:
-        return render_template('home.html', bot_response1 = "Sorry, I don't quite understand. Ask me something else.", user_response1 = u_input)
-     
+        reply = Markup('<p class="user">') + u_input + Markup('</p><p class="bot"> "Sorry, I don\'t quite understand. Ask me something else."</p>')
+        return render_template('home.html', response = reply)
+    
+@app.route("/update")
+def render_update():
+    print("hi")
+    
+    
 if __name__=="__main__":
     app.run(debug=False)
