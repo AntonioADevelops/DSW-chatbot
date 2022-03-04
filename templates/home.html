@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,23 +14,16 @@
     <div class="textbox">
       <div class="innerbox">
         <div class = "text" id="data">
-          {{response}}
+          {{response1}}
         </div>
       </div>
       <form id="forminput" action = "/form">
         <fieldset>
-          <legend>Chat Bot</legend>
+          <legend>Hello Bot</legend>
           <input type="text" name="response" id="response" size="80%"><br>
-          <label for="response">Ask the bot any Question.</label>
+          <label for="response">Greet HelloBot in different ways and they will greet you back!</label>
         </fieldset>
       </form>
     </div>
-    <script>
-      $(document).ready(function(){
-        $("#forminput").onsubmit(function(){
-          $("#data").load("/update");
-        });
-      });
-    </script>
   </body>
 </html>

@@ -23,19 +23,21 @@ body {
 }
 
 .bot {
-    text-align: left;
+    display: inline-block;
+    text-align: left !important;
     border: 2px solid #d4d4d4 !important;
     background-color: #f1f1f1 !important;
-    border-radius:10px !important;
+    border-radius: 23px 23px 23px 0px !important;
     padding: 10px !important;
-    margin: 20px 0 !important;
+    margin: 10px 0 !important;
 }
   
 .user {
+    display: inline-block;
     text-align: right !important;
     border: 2px solid rgb(170, 170, 170) !important;
     background-color: #ddd !important;
-    border-radius: 10px !important;
+    border-radius: 23px 23px 0px 23px !important;
     padding: 10px !important;
     margin: 10px 0 !important;
 }
