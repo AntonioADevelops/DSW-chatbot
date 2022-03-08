@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
-    <div class="textbox">
+    <div class="textbox" id="data">
       <div class="innerbox">
-        <div class = "text" id="data">
+        <div class = "text">
           {{response1}}
         </div>
       </div>
-      <form id="forminput" action = "/form">
+      <form action = "/form" onsubmit="forminput">
         <fieldset>
           <legend>Hello Bot</legend>
           <input type="text" name="response" id="response" size="80%"><br>

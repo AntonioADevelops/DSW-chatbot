@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    $("#response").onsubmit(function(){
-        $(".data").load("/update");
-    });
+    function forminput(){
+        $("#data").load("/update", function(responseTxt){    
+        });
+    }
 });
