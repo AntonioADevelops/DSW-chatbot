@@ -17,10 +17,12 @@
           {{response1}}
         </div>
       </div>
-      <form action = "/form" onsubmit="forminput">
+      <form action = "/form" id="formID">
         <fieldset>
           <legend>Hello Bot</legend>
-          <input type="text" name="response" id="response" size="80%"><br>
+          <input type="hidden" id="hiddenfield"/>
+          <input type="text" name="response" id="response" size="65%">
+          <input id="send" type="submit" value="Send"/><br>
           <label for="response">Greet HelloBot in different ways and they will greet you back!</label>
         </fieldset>
       </form>
