@@ -28,7 +28,8 @@ def user_input():
         return render_template('home.html', response = reply)
     
 def update_chat():
-    return render_template('home.html', stored = request.args['storedData'])
+    update = request.args['storedData']
+    return render_template('home.html', Markup('<p class="user">') + update + Markup("</p><br>))
 
 if __name__=="__main__":
     app.run(debug=False)
