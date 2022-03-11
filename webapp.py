@@ -28,15 +28,9 @@ def user_input():
         reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">Sorry, I don\'t quite understand. Greet me in in a different manner.</p><br>')
         return render_template('home.html', response = reply)
     
-<<<<<<< HEAD
 def update():
     update_text = request.args.get['storedData']
     return render_template('home.html', response = update_text)
-=======
-def update_chat():
-    update = request.args['storedData']
-    return render_template('home.html', Markup('<p class="user">') + update + Markup("</p><br>))
->>>>>>> 345e34379078e9b767c009b9df866405f508393b
 
 if __name__=="__main__":
     app.run(debug=False)
