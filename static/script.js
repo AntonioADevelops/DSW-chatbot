@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $("#send").on("click", function(){
-        $("#hiddenfield").val($("#messages").text());
-        alert($("#hiddenfield").val());
+        $("#storedData").val($("#messages").html());
         $("form#formID").submit();
     });
 });

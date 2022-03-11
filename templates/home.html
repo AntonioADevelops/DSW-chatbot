@@ -13,15 +13,15 @@
   <body>
     <div class="textbox" id="data">
       <div class="innerbox">
-        {{stored}}
         <div id="messages">
-          {{response}}
+          {{ messages }}
+          {{ response }}
         </div>
       </div>
       <form action="/form" id = "formID">
         <fieldset>
           <legend>Hello Bot</legend>
-          <input name="storedData" type="hidden" id="hiddenfield"/>
+          <input type="hidden" id="storedData" name="storedData"> 
           <input type="text" name="response" id="response" size="65%">
           <input id="send" type="submit" value="Send"/><br>
           <label for="response">Greet HelloBot in different ways and they will greet you back!</label>

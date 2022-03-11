@@ -9,13 +9,14 @@ greetings = ['hi', 'Hi', 'hello', 'Hello', 'greetings', 'Greetings', 'howdy', 'H
 
 bot_greetings = ['Hey! I\'m HelloBot.', 'Greetings User! My Name\'s HelloBot.', 'Howdy Partner! I go by HelloBot.']
 
-u_input_list = []
+inputs = []
 
 @app.route("/")
 def render_main():
     return render_template('home.html')
 
 @app.route("/form")
+
 def user_input():
     u_input = request.args['response']
     
@@ -27,8 +28,9 @@ def user_input():
         reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">Sorry, I don\'t quite understand. Greet me in in a different manner.</p><br>')
         return render_template('home.html', response = reply)
     
-def update_chat():
-    return render_template('home.html', stored = request.args['storedData'])
+def update():
+    update_text = request.args.get['storedData']
+    return render_template('home.html', response = update_text)
 
 if __name__=="__main__":
     app.run(debug=False)
