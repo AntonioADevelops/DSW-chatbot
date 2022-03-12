@@ -10,7 +10,7 @@ greetings = ['Hi', 'Hello', 'Greetings', 'Howdy', 'Hey', 'Sup', 'Whats Good', 'W
 
 bot_greetings = ['Hey! I\'m HelloBot.', 'Greetings User! My Name\'s HelloBot.', 'Howdy Partner! I go by HelloBot.']
 
-confused = ['Sorry, I don\'t quite understand.', 'I didnt quite catch that. Please rephrase your greeting.', 'I haven\'t learned that greeting, please ask in a different manner.']
+confused = ['Sorry, I don\'t quite understand. Say hi a different way.', 'I didnt quite catch that. Please rephrase your greeting.', 'I haven\'t learned that greeting, please ask in a different manner.']
 
 
 @app.route("/")
