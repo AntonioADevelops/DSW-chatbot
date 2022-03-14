@@ -23,12 +23,15 @@ body {
     max-height: 400px;
     min-width: 625px;
     max-width: 625px;
+    display: flex;
+    flex-direction: column-reverse;
     overflow: auto;
 }
 
 .user {
-    display: inline-block !important;
-    text-align: right !important;
+    text-align: right;
+    float: right;
+    clear: left;
     border: 2px solid rgb(170, 170, 170) !important;
     background-color: #ddd !important;
     border-radius: 23px 23px 0px 23px !important;
@@ -38,8 +41,9 @@ body {
     overflow-wrap: break-word;
 }
 .bot {
-    display: inline-block !important;
-    text-align: left !important;
+    text-align: left;
+    float: left;
+    clear: right;
     border: 2px solid #d4d4d4 !important;
     background-color: #f1f1f1 !important;
     border-radius: 23px 23px 23px 0px !important;
