@@ -1,13 +1,39 @@
+from abc import update_abstractmethods
 from flask import Flask, url_for, render_template, request, Markup
 import random
 
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 
-greetings = ['Hi', 'Hello', 'Greetings', 'Howdy', 'Hey', 'Sup', 'Whats Good', 'Wassup',]
+greetings = [
+    'Hi',
+    'Hello',
+    'Greetings',
+    'Howdy',
+    'Hey',
+    'Sup',
+    'Whats Good',
+    'What\'s Good',
+    'Wassup',
+    'Hi.',
+    'Hello.',
+    'Greetings.',
+    'Howdy.',
+    'Hey.',
+    'Sup.',
+    'Whats Good.',
+    'What\'s Good.',
+    'Wassup.',
+    'Hi!',
+    'Hello!',
+    'Greetings!',
+    'Howdy!',
+    'Hey!',
+    'Sup!',
+    'Whats Good!',
+    'What\'s Good!',
+    'Wassup!',]
 
 bot_greetings = ['Hey! I\'m HelloBot.', 'Greetings User! My Name\'s HelloBot.', 'Howdy Partner! I go by HelloBot.']
-
-confused = ['Sorry, I don\'t quite understand. Say it in a different way.', 'I didnt quite catch that. Please rephrase your sentence.', 'I haven\'t learned what that means, please ask in a different manner.']
 
 u_how_are_you = ['How are you?', 'How are you?', 'How do you do', 'How do you do?', 'How do you feel today?', 'How do you feel today?']
  
@@ -15,11 +41,21 @@ b_how_are_you = ['I\'m doing pretty good.']
 
 u_origin_who = ['Who made you', 'Who made you?', 'Who created you', 'Who created you?']
 
-b_origin_who = ['I was developed by Antonio A. for a school project.']
+b_origin_who = ['I was developed by Antonio A.']
+
+u_why = ['Why were you made', 'Why we\'re you made', 'Why were you made?', 'Why we\'re you made?', 'What is your purpose', 'What is your purpose?', 'What\'s your purpose', 'What\'s your purpose?']
+
+b_why = ['I am a school project.']
 
 u_origin_how = ['How were you created', 'How were you created?', 'How were you made', 'How were you made?']
 
-b_origin_how = ['I was born from code! My creator spent countless hours copying and pasting code from stackoverflow until I worked.']
+b_origin_how = ['I was born from code! My creator spent hours looking through stackoverflow forums to get me to work.']
+
+u_eat = ['Do you eat', 'Do you eat?', 'Do you eat anything', 'Do you eat anything?', 'What do you eat', 'What do you eat?']
+
+b_eat = ['I don\'t eat anything. I\'m not real!']
+
+confused = ['Sorry, I don\'t quite understand. Say it in a different way.', 'I didnt quite catch that. Please rephrase your sentence.', 'I haven\'t learned what that means, please ask in a different manner.']
 
 
 @app.route("/")
@@ -49,7 +85,15 @@ def user_input():
         reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_origin_how) + Markup('</p><br>')
         return render_template('home.html', response = update + reply)
     
-    elif u_input not in greetings:
+    elif u_input.upper() in (name.upper() for name in u_why):
+        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_why) + Markup('</p><br>')
+        return render_template('home.html', response = update + reply)
+    
+    elif u_input.upper() in (name.upper() for name in u_eat):
+        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_eat) + Markup('</p><br>')
+        return render_template('home.html', response = update + reply)
+    
+    else:
         reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(confused) + Markup('</p><br>')
         return render_template('home.html', response = update + reply)
 
