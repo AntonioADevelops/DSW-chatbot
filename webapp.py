@@ -92,6 +92,10 @@ def user_input():
         reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_why) + Markup('</p><br>')
         return render_template('home.html', response = update + reply)
     
+    elif u_input.upper() in (name.upper() for name in u_who):
+        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_who) + Markup('</p><br>')
+        return render_template('home.html', response = update + reply)
+    
     elif u_input.upper() in (name.upper() for name in u_eat):
         reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_eat) + Markup('</p><br>')
         return render_template('home.html', response = update + reply)
