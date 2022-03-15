@@ -34,11 +34,15 @@ greetings = [
 
 bot_greetings = ['Hey! I\'m HelloBot.', 'Greetings User! My Name\'s HelloBot.', 'Howdy Partner! I go by HelloBot.']
 
-u_how_are_you = ['How are you?', 'How are you?', 'How do you do', 'How do you do?', 'How do you feel today?', 'How do you feel today?']
+u_how_are_you = ['How are you', 'How are you?', 'How do you do', 'How do you do?', 'How do you feel today?', 'How do you feel today?']
  
 b_how_are_you = ['I\'m doing pretty good.']
 
-u_origin_who = ['Who made you', 'Who made you?', 'Who created you', 'Who created you?']
+u_who = ['Who are you', 'Who are you?', 'Who are you!',]
+
+b_who = [' I\'m ChatBot. I can do simple conversation! Say something to me and I\'ll try to respond.']
+
+u_origin_who = ['Who made you', 'Who made you?', 'Who created you', 'Who created you?', 'Who is your maker', 'Who is you maker?', 'Who is your creator', 'Who is you creator?', ]
 
 b_origin_who = ['I was developed by Antonio A.']
 
