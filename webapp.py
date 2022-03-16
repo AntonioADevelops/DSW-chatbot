@@ -30,7 +30,10 @@ greetings = [
     'Sup!',
     'Whats Good!',
     'What\'s Good!',
-    'Wassup!',]
+    'Wassup!',
+    'Yo',
+    'Yo.',
+    'Yo!']
 
 bot_greetings = ['Hey! I\'m HelloBot.', 'Greetings User! My Name\'s HelloBot.', 'Howdy Partner! I go by HelloBot.']
 
