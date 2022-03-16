@@ -16,13 +16,13 @@ body {
     width: 30%;
     min-width: 350px;
     height: 70%;
-    min-height: 440px;
+    min-height: 475px;
 }
 
 .innerbox {
     border: 4px solid rgb(112, 112, 112);
     border-radius: 25px;
-    height: 75%;
+    height: 80%;
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
