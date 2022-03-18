@@ -69,7 +69,6 @@ def render_main():
     return render_template('home.html')
 
 @app.route("/form")
-
 def user_input():
     u_input = request.args['response']
     chat_update = request.args["storedData"]
