@@ -101,7 +101,7 @@ def render_main():
 @app.route("/form", methods=['POST', 'GET'])
 def user_input():
     
-    if request.method == 'POST:
+    if request.method == 'POST':
         u_input = request.form['response']
         chat_update = request.form["storedData"]
         update = Markup(chat_update)
