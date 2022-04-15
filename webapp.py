@@ -98,10 +98,10 @@ confused = ['Sorry, I don\'t quite understand. Say it in a different way.', 'I d
 def render_main():
     return render_template('home.html')
 
-@app.route("/form")
+@app.route("/form", methods=['POST'])
 def user_input():
-    u_input = request.args['response']
-    chat_update = request.args["storedData"]
+    u_input = request.form['response']
+    chat_update = request.form["storedData"]
     update = Markup(chat_update)
         
     if u_input.upper() in (name.upper() for name in greetings):
