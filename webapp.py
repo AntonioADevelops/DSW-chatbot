@@ -100,11 +100,11 @@ def render_main():
 
 @app.route("/form", methods=['POST', 'GET'])
 def user_input():
-    u_input = request.form['response']
-    chat_update = request.form["storedData"]
-    update = Markup(chat_update)
     
     if request.method == 'POST:
+        u_input = request.form['response']
+        chat_update = request.form["storedData"]
+        update = Markup(chat_update)
         if u_input.upper() in (name.upper() for name in greetings):
             reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(bot_greetings) + Markup('</p><br>')
             return render_template('home.html', response = update + reply)
