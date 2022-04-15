@@ -135,6 +135,9 @@ def user_input():
     else:
         reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(confused) + Markup('</p><br>')
         return render_template('home.html', response = update + reply)
+    
+    if request.method == 'GET':
+        return render_template('home.html')
 
 if __name__=="__main__":
     app.run(debug=False)
