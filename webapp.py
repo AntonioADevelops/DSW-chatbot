@@ -98,46 +98,50 @@ confused = ['Sorry, I don\'t quite understand. Say it in a different way.', 'I d
 def render_main():
     return render_template('home.html')
 
-@app.route("/form", methods=['POST'])
+@app.route("/form", methods=['POST', 'GET'])
 def user_input():
     u_input = request.form['response']
     chat_update = request.form["storedData"]
     update = Markup(chat_update)
+    
+    if request.method == 'POST
+        if u_input.upper() in (name.upper() for name in greetings):
+            reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(bot_greetings) + Markup('</p><br>')
+            return render_template('home.html', response = update + reply)
+
+        elif u_input.upper() in (name.upper() for name in u_how_are_you):
+            reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_how_are_you) + Markup('</p><br>')
+            return render_template('home.html', response = update + reply)
+
+        elif u_input.upper() in (name.upper() for name in u_origin_who):
+            reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_origin_who) + Markup('</p><br>')
+            return render_template('home.html', response = update + reply)
+
+        elif u_input.upper() in (name.upper() for name in u_origin_how):
+            reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_origin_how) + Markup('</p><br>')
+            return render_template('home.html', response = update + reply)
+
+        elif u_input.upper() in (name.upper() for name in u_why):
+            reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_why) + Markup('</p><br>')
+            return render_template('home.html', response = update + reply)
+
+        elif u_input.upper() in (name.upper() for name in u_who):
+            reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_who) + Markup('</p><br>')
+            return render_template('home.html', response = update + reply)
+
+        elif u_input.upper() in (name.upper() for name in u_eat):
+            reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_eat) + Markup('</p><br>')
+            return render_template('home.html', response = update + reply)
+
+        else:
+            reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(confused) + Markup('</p><br>')
+            return render_template('home.html', response = update + reply)
         
-    if u_input.upper() in (name.upper() for name in greetings):
-        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(bot_greetings) + Markup('</p><br>')
-        return render_template('home.html', response = update + reply)
-    
-    elif u_input.upper() in (name.upper() for name in u_how_are_you):
-        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_how_are_you) + Markup('</p><br>')
-        return render_template('home.html', response = update + reply)
-    
-    elif u_input.upper() in (name.upper() for name in u_origin_who):
-        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_origin_who) + Markup('</p><br>')
-        return render_template('home.html', response = update + reply)
-    
-    elif u_input.upper() in (name.upper() for name in u_origin_how):
-        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_origin_how) + Markup('</p><br>')
-        return render_template('home.html', response = update + reply)
-    
-    elif u_input.upper() in (name.upper() for name in u_why):
-        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_why) + Markup('</p><br>')
-        return render_template('home.html', response = update + reply)
-    
-    elif u_input.upper() in (name.upper() for name in u_who):
-        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_who) + Markup('</p><br>')
-        return render_template('home.html', response = update + reply)
-    
-    elif u_input.upper() in (name.upper() for name in u_eat):
-        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(b_eat) + Markup('</p><br>')
-        return render_template('home.html', response = update + reply)
-    
     else:
-        reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(confused) + Markup('</p><br>')
-        return render_template('home.html', response = update + reply)
-    
-    if request.method == 'GET':
         return render_template('home.html')
+        
+        
+    
 
 if __name__=="__main__":
     app.run(debug=False)
