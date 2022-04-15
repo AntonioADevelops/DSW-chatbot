@@ -104,7 +104,7 @@ def user_input():
     chat_update = request.form["storedData"]
     update = Markup(chat_update)
     
-    if request.method == 'POST
+    if request.method == 'POST:
         if u_input.upper() in (name.upper() for name in greetings):
             reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(bot_greetings) + Markup('</p><br>')
             return render_template('home.html', response = update + reply)
@@ -136,7 +136,6 @@ def user_input():
         else:
             reply = Markup('<p class="user">') + u_input + Markup('</p><br><p class="bot">') + random.choice(confused) + Markup('</p><br>')
             return render_template('home.html', response = update + reply)
-  
     else:
         return render_template('home.html')
 
